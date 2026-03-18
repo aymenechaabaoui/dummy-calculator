@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1c1c1e;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+}
+
+.calculator {
+  width: 320px;
+  background: #1c1c1e;
+  border-radius: 48px;
+  padding: 24px 16px 16px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* Display */
+.display {
+  padding: 12px 16px 20px;
+  text-align: right;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.expression {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.4);
+  min-height: 24px;
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.result {
+  font-size: 68px;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: -2px;
+  line-height: 1;
+  word-break: break-all;
+  transition: font-size 0.1s ease;
+}
+
+.result.small  { font-size: 48px; }
+.result.xsmall { font-size: 34px; }
+
+/* Button grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  height: 72px;
+  border: none;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: filter 0.1s ease, transform 0.08s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn:active {
+  filter: brightness(1.4);
+  transform: scale(0.94);
+}
+
+/* Utility buttons (AC, +/-, %) */
+.btn.utility {
+  background: #d4d4d2;
+  color: #1c1c1e;
+  font-size: 24px;
+}
+
+/* Operator buttons */
+.btn.operator {
+  background: #ff9f0a;
+  color: #ffffff;
+}
+
+.btn.operator.active {
+  background: #ffffff;
+  color: #ff9f0a;
+}
+
+/* Digit buttons */
+.btn.digit {
+  background: #333335;
+  color: #ffffff;
+}
+
+/* Wide zero button */
+.btn.wide {
+  border-radius: 36px;
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 26px;
+}
